@@ -8,6 +8,11 @@ public class Rat extends Rodent {
     public Rat() {
     }
 
+    @Override
+    public String toString() {
+        return "Rat{}";
+    }
+
     public Rat(String name) {
         super(name);
     }

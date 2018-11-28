@@ -8,6 +8,11 @@ public class Rodent extends Pet {
     public Rodent() {
     }
 
+    @Override
+    public String toString() {
+        return "Rodent{}";
+    }
+
     public Rodent(String name) {
         super(name);
     }

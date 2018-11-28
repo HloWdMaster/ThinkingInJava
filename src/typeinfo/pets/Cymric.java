@@ -12,4 +12,9 @@ public class Cymric extends Manx {
     public Cymric() {
 
     }
+
+    @Override
+    public String toString() {
+        return "Cymric{}";
+    }
 }

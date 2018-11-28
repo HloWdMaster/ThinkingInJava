@@ -1,7 +1,22 @@
 package typeinfo;
 
-interface Interface {
+/**
+ * Create by 163 on 2018/11/23
+ */
+public class SimpleProxyDemo {
+    public static void consumer(Interface iface) {
+        iface.doSomething();
+        iface.somethingElse("bonobo");
+    }
 
+    public static void main(String[] args) {
+        consumer(new RealObject());
+        consumer(new SimpleProxy(new RealObject()));
+    }
+}
+
+
+interface Interface {
     void doSomething();
 
     void somethingElse(String arg);
@@ -11,13 +26,14 @@ class RealObject implements Interface {
 
     @Override
     public void doSomething() {
-        System.out.println("doSomething()");
+        System.out.println("doSomething");
     }
 
     @Override
     public void somethingElse(String arg) {
-        System.out.println("somethingElse" + arg);
+        System.out.println("somethingElse: " + arg);
     }
+
 }
 
 class SimpleProxy implements Interface {
@@ -35,19 +51,7 @@ class SimpleProxy implements Interface {
 
     @Override
     public void somethingElse(String arg) {
-        System.out.println("SimpleProxy somethingElse " + arg);
+        System.out.println("SimpleProxy somethingElse" + arg);
         proxied.somethingElse(arg);
-    }
-}
-
-public class SimpleProxyDemo {
-    public static void consumer(Interface iface) {
-        iface.doSomething();
-        iface.somethingElse("bonobo");
-    }
-
-    public static void main(String[] args) {
-        consumer(new RealObject());
-        consumer(new SimpleProxy(new RealObject()));
     }
 }

@@ -60,7 +60,6 @@ public class DynamicFields {
         for (int i = fields.length; i < tem.length; i++) {
             tem[i] = new Object[]{null, null};
         }
-        fields = tem;
         return makeField(id);
     }
 
@@ -98,7 +97,7 @@ public class DynamicFields {
             System.out.println(df);
             df.setField("number3", 11);
             System.out.println("df:" + df);
-            System.out.println("df.getField(\"d\"):"+df.getField("dd"));
+            System.out.println("df.getField(\"d\"):"+df.getField("d"));
             Object field = df.setField("d", null);
         } catch (DynamicFieldsException e) {
             e.printStackTrace();
