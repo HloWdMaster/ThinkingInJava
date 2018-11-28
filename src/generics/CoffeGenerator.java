@@ -9,12 +9,12 @@ import java.util.Random;
 /**
  * Create by 163 on 2018/11/26
  */
-public class CoffeeGenerator implements Generator<Coffee>, Iterable<Coffee> {
+public class CoffeGenerator implements Generator, Iterable<Coffee> {
 
     private Class[] types = {Latte.class, Mocha.class, Cappuccino.class, Americano.class};
     private static Random rand = new Random();
 
-    public CoffeeGenerator() {
+    public CoffeGenerator() {
     }
 
     @Override
@@ -24,7 +24,7 @@ public class CoffeeGenerator implements Generator<Coffee>, Iterable<Coffee> {
 
     private int size = 0;
 
-    public CoffeeGenerator(int sz) {
+    public CoffeGenerator(int sz) {
         size = sz;
     }
 
@@ -56,16 +56,21 @@ public class CoffeeGenerator implements Generator<Coffee>, Iterable<Coffee> {
         @Override
         public Coffee next() {
             count--;
-            return CoffeeGenerator.this.next();
+            return CoffeGenerator.this.next();
+        }
+
+        @Override
+        public void remove() {
+            throw new UnsupportedOperationException();
         }
     }
 
     public static void main(String[] args) {
-        CoffeeGenerator gen = new CoffeeGenerator();
+        CoffeGenerator gen = new CoffeGenerator();
         for (int i = 0; i < 5; i++) {
             System.out.println(gen.next());
         }
-        for (Coffee c : new CoffeeGenerator(5)) {
+        for (Coffee c : new CoffeGenerator(5)) {
             System.out.println(c);
         }
     }
