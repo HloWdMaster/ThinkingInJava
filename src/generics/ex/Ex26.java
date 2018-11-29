@@ -1,0 +1,7 @@
+package generics.ex;
+
+/**
+ * Create by 163 on 2018/11/29
+ */
+public class Ex26 {
+}
