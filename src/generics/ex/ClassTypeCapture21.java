@@ -13,7 +13,7 @@ class Building {
 class House extends Building {
 
 }
-public class ClassTypeCapture<T> {
+class ClassTypeCapture<T> {
     Class<?> kind;
     Map<String, Class<?>> map;
 
@@ -39,6 +39,6 @@ public class ClassTypeCapture<T> {
     }
 
     public static void main(String[] args) {
-        new ClassTypeCapture21<Building.class>(Building.class).var;
+//        new ClassTypeCapture21<Building>(Building.class).var;
     }
 }
