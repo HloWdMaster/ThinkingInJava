@@ -261,7 +261,6 @@ public class Countries {
             System.out.println(new LinkedList<>(names(6)));
             System.out.println(capitals().get("BRAZIL"));
 
-
         }
 
     }
