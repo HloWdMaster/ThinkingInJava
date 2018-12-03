@@ -13,21 +13,25 @@ class Building {
 class House extends Building {
 
 }
-public class ClassTypeCapture<T> {
+public class ClassTypeCapture21<T> {
     Class<?> kind;
     Map<String, Class<?>> map;
 
-    public ClassTypeCapture(Class<?> kind) {
+    public ClassTypeCapture21(Class<?> kind) {
         this.kind = kind;
     }
 
-    public ClassTypeCapture(Class<?> kind, Map<String, Class<?>> map) {
+    public ClassTypeCapture21(Class<?> kind, Map<String, Class<?>> map) {
         this.kind = kind;
         this.map = map;
     }
 
     public void addType(String typeName,Class<?> kind) {
         map.put(typeName,kind);
+    }
+
+    boolean f(Object arg) {
+        return kind.isInstance(arg);
     }
 
     public Object createNew(String typeName) throws IllegalAccessException, InstantiationException {
@@ -39,6 +43,7 @@ public class ClassTypeCapture<T> {
     }
 
     public static void main(String[] args) {
-        new ClassTypeCapture21<Building.class>(Building.class).var;
+        ClassTypeCapture21<Building> ctt1 = new ClassTypeCapture21<>(Building.class);
+        System.out.println(ctt1.f(new Building()));
     }
 }
