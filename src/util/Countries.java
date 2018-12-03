@@ -218,50 +218,50 @@ public class Countries {
             return entries;
         }
 
-        static Map<String, String> select(final int size) {
-            return new FlyweightMap() {
-                public Set<Map.Entry<String, String>> entrySet() {
-                    return new EntrySet(size);
-                }
-            };
-        }
 
-        static Map<String, String> map = new FlyweightMap();
 
-        public static Map<String, String> capitals() {
-            return map;
-        }
+    }
+    static Map<String, String> select(final int size) {
+        return new FlyweightMap() {
+            public Set<Map.Entry<String, String>> entrySet() {
+                return new EntrySet(size);
+            }
+        };
+    }
+    static Map<String, String> map = new FlyweightMap();
 
-        public static Map<String, String> capitals(int size) {
-            return select(size);
-        }
+    public static Map<String, String> capitals() {
+        return map;
+    }
 
-        static List<String> names = new ArrayList<>(map.keySet());
+    public static Map<String, String> capitals(int size) {
+        return select(size);
+    }
 
-        public static List<String> names() {
-            return names;
-        }
+    static List<String> names = new ArrayList<>(map.keySet());
 
-        public static List<String> names(int size) {
-            return new ArrayList<String>(select(size).keySet());
-        }
+    public static List<String> names() {
+        return names;
+    }
 
-        public static void main(String[] args) {
-            System.out.println(capitals(10));
-            System.out.println(names(10));
+    public static List<String> names(int size) {
+        return new ArrayList<String>(select(size).keySet());
+    }
 
-            System.out.println(new HashMap<>(capitals(3)));
-            System.out.println(new LinkedHashMap<>(capitals(3)));
-            System.out.println(new TreeMap<>(capitals(3)));
-            System.out.println(new Hashtable<>(capitals(3)));
-            System.out.println(new HashSet<>(names(6)));
-            System.out.println(new LinkedHashSet<>(names(6)));
-            System.out.println(new TreeSet<>(names(6)));
-            System.out.println(new ArrayList<>(names(6)));
-            System.out.println(new LinkedList<>(names(6)));
-            System.out.println(capitals().get("BRAZIL"));
+    public static void main(String[] args) {
+        System.out.println(capitals(10));
+        System.out.println(names(10));
 
-        }
+        System.out.println(new HashMap<>(capitals(3)));
+        System.out.println(new LinkedHashMap<>(capitals(3)));
+        System.out.println(new TreeMap<>(capitals(3)));
+        System.out.println(new Hashtable<>(capitals(3)));
+        System.out.println(new HashSet<>(names(6)));
+        System.out.println(new LinkedHashSet<>(names(6)));
+        System.out.println(new TreeSet<>(names(6)));
+        System.out.println(new ArrayList<>(names(6)));
+        System.out.println(new LinkedList<>(names(6)));
+        System.out.println(capitals().get("BRAZIL"));
 
     }
 
