@@ -1,9 +1,6 @@
 package containers;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 /**
  * Create by 163 on 2018/12/3
@@ -47,19 +44,20 @@ public class Unsupported {
         try {
             c.remove("C");
         } catch (Exception e) {
-            System.out.println("remove()"+e);
+            System.out.println("remove()" + e);
         }
 
         try {
             list.set(0, "x");
         } catch (Exception e) {
-            System.out.println("set():"+e);
+            System.out.println("set():" + e);
         }
     }
 
     public static void main(String[] args) {
         List<String> list = Arrays.asList("A B C D E F G H I J K L".split(" "));
-        test("modifiable Copy ",new ArrayList<String>(list));
-        test("Arrays.asList()",new ArrayList<String>(list));
+        test("modifiable Copy ", new ArrayList<String>(list));
+        test("Arrays.asList()", list);
+        test("unmodifiableList()", Collections.unmodifiableList(list));
     }
 }
