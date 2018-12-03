@@ -16,9 +16,10 @@ public class CheckedList {
     }
 
     public static void main(String[] args) {
-        List<Dog> dogs  = new ArrayList<Dog>();
+        List<Dog> dogs = new ArrayList<Dog>();
         oldStyleMethod(dogs);
         System.out.println(dogs);
     }
-public class CkeckedList {
+
 }
+
