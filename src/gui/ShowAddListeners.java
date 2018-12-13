@@ -54,6 +54,7 @@ public class ShowAddListeners extends JFrame {
         add(BorderLayout.NORTH, top);
         add(new JScrollPane(results));
         name.setText("JTextArea");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         nameListener.actionPerformed(new ActionEvent("", 0, ""));
     }
 

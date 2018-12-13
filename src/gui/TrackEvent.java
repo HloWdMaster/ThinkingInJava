@@ -20,10 +20,11 @@ public class TrackEvent extends JFrame {
     private MyButton
             b1 = new MyButton(Color.BLUE, "test1"),
             b2 = new MyButton(Color.RED, "test2");
-    ;
 
     class MyButton extends JButton {
-
+        void report(String field,String msg) {
+            h.get(field).setText(msg);
+        }
         FocusListener fl = new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
@@ -102,9 +103,6 @@ public class TrackEvent extends JFrame {
             addMouseMotionListener(mml);
         }
 
-        void report(String field, String msg) {
-            h.get(field).getText();
-        }
     }
 
     public TrackEvent() {
@@ -116,6 +114,8 @@ public class TrackEvent extends JFrame {
             add(t);
             h.put(s, t);
         }
+        add(b1);
+        add(b2);
     }
 
     public static void main(String[] args) {
